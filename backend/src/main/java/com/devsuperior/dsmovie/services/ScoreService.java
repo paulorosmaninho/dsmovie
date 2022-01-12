@@ -44,7 +44,7 @@ public class ScoreService {
 		Score score = new Score();
 		score.setMovie(movie);
 		score.setUser(user);
-		score.setScore(scoreDTO.getScore());
+		score.setValue(scoreDTO.getScore());
 		
 		//Salva Score e retorna o resultado atualizado com saveAndFlush
 		score = scoreRepository.saveAndFlush(score);
@@ -56,7 +56,7 @@ public class ScoreService {
 		//O for percorre essa lista obtendo as avaliações de cada usuário,
 		//soma e depois calcula a média pelo tamanho do array de avaliações 
 		for (Score s : movie.getScores()) {
-			sum = sum + s.getScore();
+			sum = sum + s.getValue();
 		}
 		
 		double avg = sum / movie.getScores().size();

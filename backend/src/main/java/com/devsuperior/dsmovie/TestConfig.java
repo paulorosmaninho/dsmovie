@@ -15,7 +15,7 @@ import com.devsuperior.dsmovie.repositories.ScoreRepository;
 import com.devsuperior.dsmovie.repositories.UserRepository;
 
 @Configuration
-@Profile(value = "test")
+@Profile(value = "homolog")
 public class TestConfig implements CommandLineRunner{
 
 	@Autowired

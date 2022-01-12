@@ -16,18 +16,18 @@ public class Score {
 	@EmbeddedId
 	private ScorePK id = new ScorePK();
 	
-	@Column(name = "score", precision = 11, scale = 2)
-	private Double score;
+	@Column(name = "value", precision = 11, scale = 2)
+	private Double value;
 	
 	
 	public Score() {
 	}
 
 
-	public Score(User user, Movie movie, Double score) {
+	public Score(User user, Movie movie, Double value) {
 		id.setUser(user);
 		id.setMovie(movie);
-		this.score = score;
+		this.value = value;
 	}
 
 
@@ -50,19 +50,19 @@ public class Score {
 	}
 	
 
-	public Double getScore() {
-		return score;
+	public Double getValue() {
+		return value;
 	}
 
 
-	public void setScore(Double score) {
-		this.score = score;
+	public void setValue(Double value) {
+		this.value = value;
 	}
 
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, score);
+		return Objects.hash(id);
 	}
 
 
@@ -75,7 +75,7 @@ public class Score {
 		if (getClass() != obj.getClass())
 			return false;
 		Score other = (Score) obj;
-		return Objects.equals(id, other.id) && Objects.equals(score, other.score);
+		return Objects.equals(id, other.id);
 	}
-	
+
 }
