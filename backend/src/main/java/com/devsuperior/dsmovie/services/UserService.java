@@ -16,7 +16,8 @@ import com.devsuperior.dsmovie.services.exceptions.ResourceNotFoundException;
 @Service
 public class UserService {
 	
-	@Autowired UserRepository userRepository;
+	@Autowired 
+	UserRepository userRepository;
 
 	public User insert(User user) {
 		return userRepository.save(user);

@@ -13,7 +13,8 @@ import com.devsuperior.dsmovie.repositories.MovieRepository;
 @Service
 public class MovieService {
 	
-	@Autowired MovieRepository movieRepository;
+	@Autowired 
+	MovieRepository movieRepository;
 	
 	@Transactional
 	public Movie save(Movie movie) {

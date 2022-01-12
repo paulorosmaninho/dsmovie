@@ -31,11 +31,11 @@ public class TestConfig implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 
-		User u1 = new User(null,"maria@email.com");
-		User u2 = new User(null,"joao@email.com");
-		User u3 = new User(null,"ana@email.com");
-		User u4 = new User(null,"lucia@email.com");
-		User u5 = new User(null,"joaquim@email.com");
+		User u1 = new User(null,"maria@gmail.com");
+		User u2 = new User(null,"joao@gmail.com");
+		User u3 = new User(null,"ana@gmail.com");
+		User u4 = new User(null,"lucia@gmail.com");
+		User u5 = new User(null,"joaquim@gmail.com");
 
 		userRepository.saveAll(Arrays.asList(u1, u2, u3, u4, u5));
 
