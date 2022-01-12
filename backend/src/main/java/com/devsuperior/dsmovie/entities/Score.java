@@ -16,7 +16,7 @@ public class Score {
 	@EmbeddedId
 	private ScorePK id = new ScorePK();
 	
-	@Column(name = "vl_score", precision = 11, scale = 2)
+	@Column(name = "score", precision = 11, scale = 2)
 	private Double score;
 	
 	
@@ -25,7 +25,6 @@ public class Score {
 
 
 	public Score(User user, Movie movie, Double score) {
-		super();
 		id.setUser(user);
 		id.setMovie(movie);
 		this.score = score;

@@ -23,10 +23,10 @@ public class User implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_user")
+	@Column(name = "id")
 	private Long id;
 	
-	@Column(name = "nm_email")
+	@Column(name = "email")
 	private String email;
 
 	@OneToMany(mappedBy = "id.user")
@@ -36,7 +36,6 @@ public class User implements Serializable{
 	}
 
 	public User(Long id, String email) {
-		super();
 		this.id = id;
 		this.email = email;
 	}

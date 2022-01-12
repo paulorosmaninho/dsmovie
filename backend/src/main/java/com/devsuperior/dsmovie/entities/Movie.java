@@ -22,19 +22,19 @@ public class Movie implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_movie")
+	@Column(name = "id")
 	private Long id;
 	
-	@Column(name = "nm_title")
+	@Column(name = "title")
 	private String title;
 
-	@Column(name = "vl_score", precision = 11, scale = 2)
+	@Column(name = "score", precision = 11, scale = 2)
 	private Double score;
 
-	@Column(name = "vl_count")
+	@Column(name = "count")
 	private Integer count;
 
-	@Column(name = "nm_image")
+	@Column(name = "image")
 	private String image;
 	
 	@OneToMany(mappedBy = "id.movie")
@@ -45,7 +45,6 @@ public class Movie implements Serializable{
 	}
 
 	public Movie(Long id, Double score, Integer count, String title, String image) {
-		super();
 		this.id = id;
 		this.score = score;
 		this.count = count;

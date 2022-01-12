@@ -14,14 +14,14 @@ import com.devsuperior.dsmovie.entities.User;
 public class ScorePK implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
-
+	
 	@ManyToOne
-	@JoinColumn(name = "id_user")
-	private User user;
-
-	@ManyToOne
-	@JoinColumn(name = "id_movie")
+	@JoinColumn(name = "movie_id")
 	private Movie movie;
+
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User user;
 
 	public User getUser() {
 		return user;
