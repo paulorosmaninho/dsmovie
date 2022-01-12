@@ -1,4 +1,4 @@
-package com.devsuperior.dsmovie.resources.exceptions;
+package com.devsuperior.dsmovie.controllers.exceptions;
 
 import java.time.Instant;
 

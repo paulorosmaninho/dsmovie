@@ -25,14 +25,14 @@ public class Movie implements Serializable{
 	@Column(name = "id")
 	private Long id;
 	
-	@Column(name = "title")
-	private String title;
-
 	@Column(name = "score", precision = 11, scale = 2)
 	private Double score;
-
+	
 	@Column(name = "count")
 	private Integer count;
+
+	@Column(name = "title")
+	private String title;
 
 	@Column(name = "image")
 	private String image;
