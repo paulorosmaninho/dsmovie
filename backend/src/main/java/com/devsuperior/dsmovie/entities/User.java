@@ -12,6 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 
 @Entity
@@ -26,6 +28,8 @@ public class User implements Serializable{
 	@Column(name = "id")
 	private Long id;
 	
+	@NotEmpty(message = "Empty - O campo email é obrigatório")
+	@NotNull(message = "Null - O campo email é obrigatório")
 	@Column(name = "email")
 	private String email;
 

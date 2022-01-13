@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.devsuperior.dsmovie.dto.MovieDTO;
 import com.devsuperior.dsmovie.entities.Movie;
 import com.devsuperior.dsmovie.repositories.MovieRepository;
+import com.devsuperior.dsmovie.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class MovieService {
@@ -31,14 +32,20 @@ public class MovieService {
 		return page;
 	}
 
+	
 	@Transactional(readOnly = true) /*readOnly para mais performance*/
 	public MovieDTO findById(Long id){
 		//Retorna um Movie. Foi adicionado o metodo .get() para
 		//obter o objeto Movie dentro do objeto Optional.
-		Movie result = movieRepository.findById(id).get();
+		Movie movie = movieRepository.findById(id).get();
+		
+		if(movie==null) {
+			throw new ResourceNotFoundException(id); 
+		}
+
 		//Converte a lista de Movies para MovieDTO e devolve para o controller
-		MovieDTO dto = new MovieDTO(result);
-		return dto;
+		MovieDTO movieDTO = new MovieDTO(movie);
+		return movieDTO;
 	}
 
 }

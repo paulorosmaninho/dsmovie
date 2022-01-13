@@ -26,15 +26,17 @@ public class MovieController {
 	MovieService movieService;
 	
 	@GetMapping
-	public Page<MovieDTO> findAll(Pageable pageable){
-		return movieService.findAll(pageable);
+	public ResponseEntity<Page<MovieDTO>> findAll(Pageable pageable){
+		Page<MovieDTO> page = movieService.findAll(pageable);
+		return ResponseEntity.ok().body(page);
 	}
 	
 	
 	
 	@GetMapping(value = "/{id}")
-	public MovieDTO findById(@PathVariable Long id){
-		return movieService.findById(id);
+	public ResponseEntity<MovieDTO> findById(@PathVariable Long id){
+		MovieDTO movieDTO = movieService.findById(id);
+		return ResponseEntity.ok().body(movieDTO);
 	}
 	
 	
