@@ -1,5 +1,7 @@
 package com.devsuperior.dsmovie.services;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -28,15 +30,13 @@ public class UserService {
 	
 	@Transactional(readOnly = true) /*readOnly para mais performance*/
 	public UserDTO findById(Long id) {
-		//Retorna um User. Foi adicionado o metodo .get() para
-		//obter o objeto User dentro do objeto Optional.
-		User user = userRepository.findById(id).get();
+		Optional<User> user = userRepository.findById(id);
 
-		if(user==null) {
+		if(!user.isPresent()) {
 			throw new ResourceNotFoundException(id); 
 		}
 		
-		UserDTO userDTO = new UserDTO(user);
+		UserDTO userDTO = new UserDTO(user.get());
 		return userDTO;
 	}
 	

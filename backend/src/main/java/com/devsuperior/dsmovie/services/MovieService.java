@@ -1,5 +1,7 @@
 package com.devsuperior.dsmovie.services;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -35,16 +37,14 @@ public class MovieService {
 	
 	@Transactional(readOnly = true) /*readOnly para mais performance*/
 	public MovieDTO findById(Long id){
-		//Retorna um Movie. Foi adicionado o metodo .get() para
-		//obter o objeto Movie dentro do objeto Optional.
-		Movie movie = movieRepository.findById(id).get();
+		Optional<Movie> movie = movieRepository.findById(id);
 		
-		if(movie==null) {
+		if(!movie.isPresent()) {
 			throw new ResourceNotFoundException(id); 
 		}
 
 		//Converte a lista de Movies para MovieDTO e devolve para o controller
-		MovieDTO movieDTO = new MovieDTO(movie);
+		MovieDTO movieDTO = new MovieDTO(movie.get());
 		return movieDTO;
 	}
 
