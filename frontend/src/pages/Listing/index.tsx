@@ -1,4 +1,4 @@
-import axios, { Axios } from "axios";
+import axios from "axios";
 import MovieCard from "components/MovieCard";
 import Pagination from "components/Pagination";
 import { useEffect, useState } from "react";
@@ -28,7 +28,7 @@ function Listing() {
                 const data = response.data as MoviePage;
                 setPage(data);
             });
-    }, [pageNumber]);
+    }, [pageNumber, page.size]);
 
     const handlePageChange = (newPageNumber : number) => {
         setPageNumber(newPageNumber)
