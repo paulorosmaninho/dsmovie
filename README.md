@@ -9,7 +9,7 @@
 # Sobre o projeto
 
 O projeto DSMovie é uma aplicação full stack front-end e back-end, para avaliar filmes. Ela foi construída durante a semana Spring React, que aconteceu do dia 10 ao dia 14/01/2022, na escola DevSuperior do professor Nélio Alves.
-Nesse evento foram apresentandos conceitos de:
+Nesse evento foram apresentados conceitos de:
 * HTML
 * CSS
 * Bootstrap
@@ -19,9 +19,9 @@ Nesse evento foram apresentandos conceitos de:
 * Java
 * Spring Boot
 
-O front-end da aplicação foi construído com ReactJS e o back-end são microservições REST construídos com Java 17 e framework Spring.
+O front-end da aplicação foi construído com ReactJS e o back-end são microserviços REST construídos com Java 17 e framework Spring.
 
-A aplicação apresenta uma lista paginada de filmes, ao clicar no botão avaliar o usuário é levado até uma página com um formulário, onde ele informa seu e-mail e uma nota para o filme. O e-mail e a nota são registrados e a nota geral do filme é atualizada na lista.
+A aplicação apresenta uma lista paginada de filmes. Ao clicar no botão avaliar o usuário é levado até uma página com um formulário, onde ele informa seu e-mail e uma nota para o filme. O e-mail e a nota são registrados e a nota geral do filme é atualizada na página da lista de filmes.
 
 ### Lista de filmes
 ![Web 1](https://github.com/paulorosmaninho/assets/blob/master/dsmovie/lista.png)
